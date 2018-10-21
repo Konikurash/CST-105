@@ -1,0 +1,9 @@
+//Tyler Rosenberry
+//This is my program
+public class Basic {
+	public static void main(String[] args) {
+		System.out.println("My name is Tyler Rosenberry.");
+		System.out.println("My favorite color is gray.");
+		System.out.println("If I won the lottery, I would live comfortable for the rest of my life.");
+	}
+}
