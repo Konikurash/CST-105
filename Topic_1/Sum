@@ -1,0 +1,19 @@
+//Tyler Rosenberry
+//This is my program
+import java.util.*;
+public class Sum {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter a positive 5-digit number ");
+		int fiveDigit = input.nextInt();
+		int number1 = fiveDigit % 10;
+		int number2 = fiveDigit / 10 % 10;
+		int number3 = fiveDigit / 100 % 10;
+		int number4 = fiveDigit / 1000 % 10;
+		int number5 = fiveDigit / 10000 % 10;
+		int solution = number1 + number2 + number3 + number4 + number5;
+		System.out.print("The sum of the digits " + number5 + " + " + number4 + " + " + number3 + " + " +
+		number2 + " + " + number1 + " = " + solution);
+		
+	}
+}
