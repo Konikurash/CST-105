@@ -1,0 +1,17 @@
+//Tyler Rosenberry
+//This is my program
+import java.util.*;
+public class FarenToCel {
+	public static void main (String[] args) {
+	Scanner input = new Scanner(System.in);
+	System.out.print("Enter the degree in Farenheit ");
+	double Faren = input.nextDouble();
+	double Cel = (Faren - 32) * (5.0 / 9);
+	System.out.println(Faren + "F is " + Cel + "C");
+	System.out.print("Enter the degree in Celcius ");
+	double Celcius = input.nextDouble();
+	double Farenheit = (Celcius * (9.0/5)) + 32;
+	System.out.print(Celcius + "C is " + Farenheit + "F");
+	}
+
+}
