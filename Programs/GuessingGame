@@ -1,0 +1,36 @@
+//Tyler Rosenberry
+//This is my program
+import java.util.*;
+public class RandomNum {
+public static void main(String[] args) {
+	Scanner input = new Scanner(System.in);
+	Random rand = new Random();
+	int numb = rand.nextInt(10000) + 1;
+	int cap = 10000;
+	int min = 0;
+	int tries = 0;
+	System.out.println("Pick a number between 1 and 10,000");
+	
+	while (tries < 10000 ) {
+		int guess = input.nextInt();
+		tries++;
+		if (guess < numb) {
+			min = guess;
+			System.out.println("The number is between " + min + " and " + cap + ". Tries: " + tries);
+		}
+		if (guess > numb) {
+			cap = guess;
+			System.out.println("The number is between " + min + " and " + cap + ". Tries: " + tries);
+		}
+		if (guess == numb) {
+			if (tries == 1) {
+				System.out.println("Congratulations, you got it on your first try.");
+			}
+			else {
+				System.out.println("Congratulations, it took " + tries + " tries.");
+			}
+			break;
+		}
+	}
+}
+}
