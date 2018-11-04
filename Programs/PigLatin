@@ -1,0 +1,33 @@
+//Tyler Rosenberry
+//This is my program
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+public class PigLatin {
+	public static void main(String[] args) throws IOException {
+		int x = 0;
+		String file;
+		file = new String(Files.readAllBytes(Paths.get("src/notPig")));
+		System.out.println(file);
+	    String[] words = file.split("\\W+");
+	    while (x < words.length) {
+	    	if (words[x].startsWith("A") || words[x].startsWith("E") || words[x].startsWith("I") || words[x].startsWith("O") || words[x].startsWith("U") || words[x].startsWith("a") || words[x].startsWith("e") || words[x].startsWith("i") || words[x].startsWith("o") || words[x].startsWith("u")) {
+				System.out.println(words[x] + "     " + words[x].toUpperCase() + "AY");
+			}
+	    	else {
+	    		String end = new String();
+	    		String rest = new String();
+	    		for (int i = 0; i < words[x].length(); i++) {
+	    			if (words[x].charAt(i) == 'a' || words[x].charAt(i) == 'e' || words[x].charAt(i) == 'i' || words[x].charAt(i) == 'o' || words[x].charAt(i) == 'u') {
+	    				end = words[x].substring(0, i);
+	    				rest = words[x].substring(i);
+	    				break;
+	    			}
+	    		}
+				System.out.println(words[x] + "     " + rest.toUpperCase() + end.toUpperCase() + "AY");
+			}
+	    	x++;
+	    	
+	    }
+}
+}
