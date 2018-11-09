@@ -1,0 +1,59 @@
+//Tyler Rosenberry
+//This is my program
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+public class Thingy {
+	public static void main(String[] args) throws IOException {
+		String file;
+		file = new String(Files.readAllBytes(Paths.get("src/Thingy.txt")));
+		char[][] grid = new char[20][45];
+		int a = 0;
+		int b = 0;
+		int c = 0;
+		int d = 0;
+		int e = 0;
+		while (a < file.length()) {
+			if (c < 45) {
+			grid[b][c] = file.charAt(d);
+			++a;
+			++c;
+			++d;
+			++e;
+			}
+			else {
+				++b;
+				c = 0;
+			}
+		}
+		while (e < 900) {
+			if (c < 45) {
+				grid[b][c] = '@';
+				++c;
+				++e;
+			}
+			else {
+				++b;
+				c = 0;
+			}
+		}
+		for (int row = 0; row < grid.length; row++) {
+			for (int column = 0; column < grid[row].length; column++) {
+				System.out.print(grid[row][column] + "");
+			}
+			System.out.println();
+		}
+		for (int x = 0; x < 45;x++) {
+			for (int y = 0;y < 20;y++) {
+				if (grid[y][x] == '@') {
+				break;
+				}
+				else {
+					System.out.print(grid[y][x]);
+				}
+				
+			}
+		}
+	}
+}
