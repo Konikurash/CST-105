@@ -1,0 +1,108 @@
+//Tyler Rosenberry
+//This is my program.
+public class NFLPlayer {
+	private String fName;
+	private String lName;
+	private int number;
+	private String height;
+	private int weight;
+	private String position;
+	private String domHand;
+	protected static String offDef;
+	private int topSpeed;
+	private String teamName;
+	public NFLPlayer() {
+	}
+	public NFLPlayer( String fName, String lName, int number, String height, int weight, String position, String domHand, String offDef, int topSpeed, String teamName) {
+		this.fName = fName;
+		this.lName = lName;
+		this.number = number;
+		this.height = height;
+		this.weight = weight;
+		this.position = position;
+		this.domHand = domHand;
+		NFLPlayer.offDef = offDef;
+		this.topSpeed = topSpeed;
+		this.teamName = teamName;
+	}
+	public String getFName() {
+		return fName;
+	}
+	public String getLName() {
+		return lName;
+	}
+	public int getNumber() {
+		return number;
+	}
+	public String getHeight() {
+		return height;
+	}
+	public int getWeight() {
+		return weight;
+	}
+	public String getPosition() {
+		return position;
+	}
+	public String getDomHand() {
+		return domHand;
+	}
+	public String getOffDef() {
+		return offDef;
+	}
+	public int getTopSpeed() {
+		return topSpeed;
+	}
+	public String getTeamName() {
+		return teamName;
+	}
+	public void setFName( String newFName) {
+		fName = newFName;
+	}
+	public void setLName( String newLName) {
+		lName = newLName;
+	}
+	public void setNumber( int newNumber) {
+		number = newNumber;
+	}
+	public void setHeight( String newHeight) {
+		height = newHeight;
+	}
+	public void setWeight( int newWeight) {
+		weight = newWeight;
+	}
+	public void setPosition( String newPosition) {
+		position = newPosition;
+	}
+	public void setDomHand( String newDomHand) {
+		domHand = newDomHand;
+	}
+	public void setOffDef( String newOffDef) {
+		offDef = newOffDef;
+	}
+	public void setTopSpeed( int newTopSpeed) {
+		topSpeed = newTopSpeed;
+	}
+	public void setTeamName( String newTeamName) {
+		teamName = newTeamName;
+	}
+	@Override
+	public String toString() {
+		return fName + " " + lName + " NUM:" + number + " H: " + height + " W: " + weight + " lbs, playing the " + position + " position. He is " + domHand + "-handed on " + offDef + " with a max speed of " + topSpeed + " mph. Belonging to the " + teamName + ".";
+	}
+	public static void main(String[] args) {
+		
+		NFLPlayer pl1 = new NFLPlayer("Nick", "Brake", 23, "6'3", 220, "Quarterback", "right", "Offence", 19, "Dragons");
+		NFLPlayer pl2 = new NFLPlayer("Derrick", "Vince", 52, "7'2", 180, "Receiver", "left", "Offence", 20, "Dragons");
+		NFLPlayer pl3 = new NFLPlayer("Largo", "Hughes", 67, "5'6", 190, "Runningback", "right", "Offence", 21, "Dragons");
+		NFLPlayer pl4 = new NFLPlayer("Grant", "Lance", 33, "6'2", 210, "lineman", "left", "Defence", 17, "Dragons");
+		NFLPlayer pl5 = new NFLPlayer("Vick", "Pierce", 54, "6'4", 250, "linebacker", "right", "Defence", 16, "Dragons");
+		NFLPlayer pl6 = new NFLPlayer("Korey", "Roth", 22, "5'8", 200, "defensive backs", "left", "Defence", 15, "Dragons");
+		
+		System.out.println(pl1);
+		System.out.println(pl2);
+		System.out.println(pl3);
+		System.out.println(pl4);
+		System.out.println(pl5);
+		System.out.println(pl6);
+	}
+}
