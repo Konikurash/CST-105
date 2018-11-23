@@ -1,0 +1,54 @@
+//Tyler Rosenberry
+//This is my program.
+public class Primindrome {
+	public static boolean isPrime(int x) {
+		int y = 0;
+        int z = 1;
+
+        while(z <= x)
+        {
+            if(x % z == 0)
+            {
+                y++;
+            }
+            z++;
+        }
+        return (y == 2);
+	}
+	public static boolean isPalindrome(int y) {
+		boolean palin = false;
+		if(y == reverse(y)) {
+			palin = true;
+		}
+		return palin;
+	}
+	public static int reverse(int z) {
+		int reverse = 0;
+		int remainder = 0;
+		do {
+			remainder = z % 10;
+			reverse = reverse * 10 + remainder;
+			z = z /10;
+		}
+		while (z > 0); {
+			return reverse;
+		}
+	}
+	public static void main(String[] args) {
+		int number = 1;
+		while (number <= 100000) {
+			if (isPrime(number) == true) {
+				if (isPalindrome(number) == true) {
+					System.out.println(number);
+					number++;
+				}
+				else {
+					number++;
+				}
+			}
+			else {
+				number++;
+			}
+		}
+ }
+}
