@@ -1,0 +1,22 @@
+//Tyler Rosenberry
+//This is my program
+public class OffensivePlayer extends NFLPlayer {
+	private String side;
+	public OffensivePlayer() {}
+	
+	public OffensivePlayer (String fName, String lName, int number, String height, int weight, String position, String domHand, int topSpeed, String teamName, String side) {
+		super(fName, lName, number, height, weight, position, domHand, topSpeed, teamName);
+		this.setSide(side);
+	}
+
+	public String getSide() {
+		return side;
+	}
+
+	public void setSide(String side) {
+		this.side = side;
+	}
+	public String toString() {
+		return getFName() + " " + getLName() + " NUM:" + getNumber() + " H: " + getHeight() + " W: " + getWeight() + " lbs, playing the " + getPosition() + " position. He is " + getDomHand() + "-handed on " + side + " with a max speed of " + getTopSpeed() + " mph. Belonging to the " + getTeamName() + ".\n";
+	}
+}
