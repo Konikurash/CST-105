@@ -1,0 +1,39 @@
+import java.util.ArrayList;
+
+//Tyler Rosenberry
+//This is my program.
+public class NFLPlayerManager extends NFLPlayer {
+	private String mName;
+	//Creates ArrayList
+	private static ArrayList<NFLPlayer> team  = new ArrayList<NFLPlayer>();
+	public NFLPlayerManager() {} //No arg constructor
+	// All arg constructor
+	public NFLPlayerManager(String mName, ArrayList<NFLPlayer> team) {
+		this.mName = mName;
+		NFLPlayerManager.team = team;
+		createPlayers();
+	}
+	//Creates Players and adds them to ArrayList
+	public void createPlayers() {
+		team.add(NFLPlayer.pl1);
+		team.add(NFLPlayer.pl2);
+		team.add(NFLPlayer.pl3);
+		team.add(NFLPlayer.pl4);
+		team.add(NFLPlayer.pl5);
+		team.add(NFLPlayer.pl6);
+	}
+	
+	@Override
+	public String toString() {
+		return mName + " is the manager of the Dragons.";
+		
+	}
+	//Driver Method
+	public static void main(String[] args) {
+		NFLPlayerManager one = new NFLPlayerManager("Freddy Richard", team);
+		System.out.println(one);
+		System.out.println(team);
+	}
+	
+
+}
