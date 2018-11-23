@@ -1,0 +1,98 @@
+//Tyler Rosenberry
+//This is my program.
+public abstract class NFLPlayer {
+	private String fName;
+	private String lName;
+	private int number;
+	private String height;
+	private int weight;
+	private String position;
+	private String domHand;
+	private int topSpeed;
+	private String teamName;
+	public static OffensivePlayer pl1 = new OffensivePlayer("Nick", "Brake", 23, "6'3", 220, "Quarterback", "right", 19, "Dragons", "Offence");
+	public static OffensivePlayer pl2 = new OffensivePlayer("Derrick", "Vince", 52, "7'2", 180, "Receiver", "left", 20, "Dragons", "Offence");
+	public static OffensivePlayer pl3 = new OffensivePlayer("Largo", "Hughes", 67, "5'6", 190, "Runningback", "right", 21, "Dragons", "Offence");
+	public static DefensivePlayer pl4 = new DefensivePlayer("Grant", "Lance", 33, "6'2", 210, "lineman", "left", 17, "Dragons", "Defence");
+	public static DefensivePlayer pl5 = new DefensivePlayer("Vick", "Pierce", 54, "6'4", 250, "linebacker", "right", 16, "Dragons", "Defence");
+	public static DefensivePlayer pl6 = new DefensivePlayer("Korey", "Roth", 22, "5'8", 200, "defensive backs", "left", 15, "Dragons", "Defence");
+	public NFLPlayer() {
+	}
+	public NFLPlayer( String fName, String lName, int number, String height, int weight, String position, String domHand, int topSpeed, String teamName) {
+		this.fName = fName;
+		this.lName = lName;
+		this.number = number;
+		this.height = height;
+		this.weight = weight;
+		this.position = position;
+		this.domHand = domHand;
+		this.topSpeed = topSpeed;
+		this.teamName = teamName;
+	}
+	public String getFName() {
+		return fName;
+	}
+	public String getLName() {
+		return lName;
+	}
+	public int getNumber() {
+		return number;
+	}
+	public String getHeight() {
+		return height;
+	}
+	public int getWeight() {
+		return weight;
+	}
+	public String getPosition() {
+		return position;
+	}
+	public String getDomHand() {
+		return domHand;
+	}
+	public int getTopSpeed() {
+		return topSpeed;
+	}
+	public String getTeamName() {
+		return teamName;
+	}
+	public void setFName( String newFName) {
+		fName = newFName;
+	}
+	public void setLName( String newLName) {
+		lName = newLName;
+	}
+	public void setNumber( int newNumber) {
+		number = newNumber;
+	}
+	public void setHeight( String newHeight) {
+		height = newHeight;
+	}
+	public void setWeight( int newWeight) {
+		weight = newWeight;
+	}
+	public void setPosition( String newPosition) {
+		position = newPosition;
+	}
+	public void setDomHand( String newDomHand) {
+		domHand = newDomHand;
+	}
+	public void setTopSpeed( int newTopSpeed) {
+		topSpeed = newTopSpeed;
+	}
+	public void setTeamName( String newTeamName) {
+		teamName = newTeamName;
+	}
+	@Override
+	public String toString() {
+		return fName + " " + lName + " NUM:" + number + " H: " + height + " W: " + weight + " lbs, playing the " + position + " position. He is " + domHand + "-handed on " + " with a max speed of " + topSpeed + " mph. Belonging to the " + teamName + ".\n";
+	}
+	public static void main(String[] args) {		
+		System.out.println(pl1);
+		System.out.println(pl2);
+		System.out.println(pl3);
+		System.out.println(pl4);
+		System.out.println(pl5);
+		System.out.println(pl6);
+	}
+}
