@@ -1,0 +1,68 @@
+import java.awt.Font;
+
+import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
+import javafx.stage.Stage;
+
+public class Labels extends Application {
+	
+	public static void main(String[] args) {
+		Application.launch(args);
+	}
+	
+	public void start(Stage primaryStage) {
+		Pane pa = new Pane();
+		HBox side = new HBox(30);
+		
+		Label one = new Label("Vash the");
+		Label two = new Label("Stampede");
+		Label three = new Label("Wanted for");
+		Label four = new Label("60,000,000,000");
+		Label five = new Label("Double Dollars");
+		
+		one.setTextFill(Color.BLUEVIOLET);
+		two.setTextFill(Color.CRIMSON);
+		three.setTextFill(Color.DARKBLUE);
+		four.setTextFill(Color.DARKGRAY);
+		five.setTextFill(Color.INDIGO);
+		
+		one.setScaleX(2);
+		two.setScaleX(2);
+		three.setScaleX(2);
+		four.setScaleX(2);
+		five.setScaleX(2);
+		
+		one.setScaleY(2);
+		two.setScaleY(2);
+		three.setScaleY(2);
+		four.setScaleY(2);
+		five.setScaleY(2);
+		
+		one.setRotate(-90);
+		two.setRotate(-90);
+		three.setRotate(-90);
+		four.setRotate(-90);
+		five.setRotate(-90);
+		
+		side.getChildren().add(one);
+		side.getChildren().add(two);
+		side.getChildren().add(three);
+		side.getChildren().add(four);
+		side.getChildren().add(five);
+		side.setPadding(new Insets(200, 0, 0, 50));
+		pa.getChildren().add(side);
+		Scene scene = new Scene(pa, 550, 500);
+		primaryStage.setScene(scene);
+		primaryStage.setResizable(false);
+		primaryStage.setTitle("Verti-Labels");
+		primaryStage.show();
+	}
+
+}
