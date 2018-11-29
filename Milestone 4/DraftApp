@@ -1,0 +1,318 @@
+//Tyler Rosenberry
+//I am the creator of this program.
+
+import java.util.ArrayList;
+
+import javafx.animation.FadeTransition;
+import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.stage.Stage;
+import javafx.util.Duration;
+
+public class DraftApp extends Application {
+
+	public static void main(String[] args) {
+		Application.launch(args);
+	}
+	public static ArrayList<NFLPlayer> team = new ArrayList<NFLPlayer>(22);
+	public static ArrayList<NFLPlayer> benched = new ArrayList<NFLPlayer>(50);
+	
+	
+	public static ObservableList<NFLPlayer> cNFLPlayer() {
+		ObservableList<NFLPlayer> cTeam = FXCollections.observableArrayList();
+		cTeam.addAll(team);
+		return cTeam;
+	}
+	public static ObservableList<NFLPlayer> rNFLPlayer() {
+		ObservableList<NFLPlayer> rTeam = FXCollections.observableArrayList();
+		rTeam.addAll(benched);
+		return rTeam;
+	}
+	public static ObservableList<NFLPlayer> wNFLPlayer() {
+		ObservableList<NFLPlayer> wTeam = FXCollections.observableArrayList();
+		wTeam.addAll(NFLPlayer.pl1, NFLPlayer.pl2, NFLPlayer.pl3, NFLPlayer.pl4, 
+				NFLPlayer.pl5, NFLPlayer.pl6, NFLPlayer.pl7, NFLPlayer.pl8, NFLPlayer.pl9,
+				NFLPlayer.pl10, NFLPlayer.pl11, NFLPlayer.pl12, NFLPlayer.pl13, NFLPlayer.pl14,
+				NFLPlayer.pl15, NFLPlayer.pl16, NFLPlayer.pl17, NFLPlayer.pl18, NFLPlayer.pl19,
+				NFLPlayer.pl20, NFLPlayer.pl21, NFLPlayer.pl22, NFLPlayer.pl23, NFLPlayer.pl24,
+				NFLPlayer.pl25, NFLPlayer.pl26, NFLPlayer.pl27, NFLPlayer.pl28, NFLPlayer.pl29,
+				NFLPlayer.pl30, NFLPlayer.pl31, NFLPlayer.pl32, NFLPlayer.pl33, NFLPlayer.pl34,
+				NFLPlayer.pl35, NFLPlayer.pl36, NFLPlayer.pl37, NFLPlayer.pl38, NFLPlayer.pl39,
+				NFLPlayer.pl40, NFLPlayer.pl41, NFLPlayer.pl42, NFLPlayer.pl43, NFLPlayer.pl44,
+				NFLPlayer.pl45, NFLPlayer.pl46, NFLPlayer.pl47, NFLPlayer.pl48, NFLPlayer.pl49,
+				NFLPlayer.pl50);
+		return wTeam;
+	}
+	
+	public static String currentTeam() {
+		Pane pane = new Pane();
+		TableView<NFLPlayer> tList = new TableView<>();
+		
+		TableColumn<NFLPlayer, String> lNameColumn = new TableColumn<>("Name");
+		lNameColumn.setMinWidth(75);
+		lNameColumn.setCellValueFactory(new PropertyValueFactory<> ("lName")); 
+			
+		TableColumn<NFLPlayer, String> numberColumn = new TableColumn<>("Number");
+		numberColumn.setMinWidth(25);
+		numberColumn.setCellValueFactory(new PropertyValueFactory<> ("number"));
+				
+		TableColumn<NFLPlayer, String> positionColumn = new TableColumn<>("Position");
+		positionColumn.setMinWidth(125);
+		positionColumn.setCellValueFactory(new PropertyValueFactory<> ("position"));
+		
+		tList.setItems(cNFLPlayer());
+		tList.getColumns().addAll(lNameColumn, numberColumn, positionColumn);
+		tList.setMinHeight(550);
+		tList.setPrefHeight(550);
+		tList.setMaxHeight(550);
+		
+		VBox vbox = new VBox();
+		vbox.getChildren().addAll(tList);
+		pane.getChildren().add(vbox);
+		
+		Stage newStage = new Stage();
+		Scene scene = new Scene(pane, 250, 550);
+		newStage.setScene(scene);
+		newStage.setResizable(false);
+		newStage.setTitle("Current Team");
+		newStage.show();
+		return null;
+	}
+	public static String modTeam() {
+		GridPane pane = new GridPane();
+		//Benched List
+		ChoiceBox<NFLPlayer> bTeam = new ChoiceBox<>();
+		bTeam.getItems().addAll(benched);
+		
+		//Team List
+		ChoiceBox<NFLPlayer> aTeam = new ChoiceBox<>();
+		aTeam.getItems().addAll(team);
+		
+		Button add = new Button("Add Player to Current Team");
+		add.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent actionEvent) {
+				if (team.size() == 22) {
+					Label error = new Label("Team is full, please remove a player before adding.");
+					pane.add(error, 0, 4);
+					FadeTransition ft = new FadeTransition();
+					ft.setNode(error);
+					ft.setDuration(Duration.seconds(3));
+					ft.setFromValue(1);
+					ft.setToValue(0);
+					ft.play();
+				}
+				else {
+					team.add(bTeam.getValue());
+					Label change = new Label("Please exit and re-enter to see the changes.");
+					pane.add(change, 0, 6);
+				}
+				
+			}
+		} );
+		
+		Button remove = new Button("Remove Player from Current Team");
+		remove.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent actionEvent) {
+				
+				team.remove(aTeam.getValue());
+				if (team.size() < 22) {
+					Label warn = new Label("Warning: You have less than 22 players in your team.");
+					pane.add(warn, 0, 5);
+					FadeTransition ft = new FadeTransition();
+					ft.setNode(warn);
+					ft.setDuration(Duration.seconds(3));
+					ft.setFromValue(1);
+					ft.setToValue(0);
+					ft.play();
+				}
+				Label change = new Label("Please exit and re-enter to see the changes.");
+				pane.add(change, 0, 6);
+			}
+		} );
+		pane.setVgap(50);
+		pane.add(aTeam, 0 , 0);
+		pane.add(remove, 0, 1);
+		pane.add(bTeam, 0, 2);
+		pane.add(add, 0, 3);
+
+		Stage newStage = new Stage();
+		Scene scene = new Scene(pane, 1000, 600);
+		newStage.setScene(scene);
+		newStage.setResizable(false);
+		newStage.setTitle("Add/Remove Players");
+		newStage.show();
+		return null;
+	}
+	public static String wholeTeam() {
+		Pane pane = new Pane();
+		
+		TableView<NFLPlayer> tList = new TableView<>();
+		
+		TableColumn<NFLPlayer, String> fNameColumn = new TableColumn<>("Name");
+		fNameColumn.setMinWidth(50);
+		fNameColumn.setCellValueFactory(new PropertyValueFactory<> ("fName"));
+		
+		TableColumn<NFLPlayer, String> lNameColumn = new TableColumn<>("Name");
+		lNameColumn.setMinWidth(75);
+		lNameColumn.setCellValueFactory(new PropertyValueFactory<> ("lName")); 
+			
+		TableColumn<NFLPlayer, String> numberColumn = new TableColumn<>("Number");
+		numberColumn.setMinWidth(25);
+		numberColumn.setCellValueFactory(new PropertyValueFactory<> ("number"));
+				
+		TableColumn<NFLPlayer, String> positionColumn = new TableColumn<>("Position");
+		positionColumn.setMinWidth(125);
+		positionColumn.setCellValueFactory(new PropertyValueFactory<> ("position"));
+		
+		TableColumn<NFLPlayer, String> sideColumn = new TableColumn<>("Side");
+		sideColumn.setMinWidth(50);
+		sideColumn.setCellValueFactory(new PropertyValueFactory<> ("side"));
+		
+		tList.setItems(wNFLPlayer());
+		tList.getColumns().addAll(fNameColumn, lNameColumn, numberColumn, positionColumn, sideColumn);
+		tList.setMinHeight(500);
+		tList.setPrefHeight(500);
+		tList.setMaxHeight(500);
+		
+		VBox vbox = new VBox();
+		vbox.getChildren().addAll(tList);
+		pane.getChildren().add(vbox);
+		
+		Stage newStage = new Stage();
+		Scene scene = new Scene(pane, 375, 500);
+		newStage.setScene(scene);
+		newStage.setResizable(false);
+		newStage.setTitle("All Available Players");
+		newStage.show();
+		return null;
+	}
+	
+	public void start(Stage primaryStage) {
+		Pane pa = new Pane();
+		BorderPane pane = new BorderPane();
+		VBox buttons = new VBox();
+		team.add(NFLPlayer.pl1);
+		team.add(NFLPlayer.pl2);
+		team.add(NFLPlayer.pl3);
+		team.add(NFLPlayer.pl4);
+		team.add(NFLPlayer.pl5);
+		team.add(NFLPlayer.pl6);
+		team.add(NFLPlayer.pl7);
+		team.add(NFLPlayer.pl8);
+		team.add(NFLPlayer.pl9);
+		team.add(NFLPlayer.pl10);
+		team.add(NFLPlayer.pl11);
+		team.add(NFLPlayer.pl12);
+		team.add(NFLPlayer.pl13);
+		team.add(NFLPlayer.pl14);
+		team.add(NFLPlayer.pl16);
+		team.add(NFLPlayer.pl17);
+		team.add(NFLPlayer.pl18);
+		team.add(NFLPlayer.pl19);
+		team.add(NFLPlayer.pl20);
+		team.add(NFLPlayer.pl21);
+		team.add(NFLPlayer.pl22);
+		team.add(NFLPlayer.pl23);
+		benched.add(NFLPlayer.pl15);
+		benched.add(NFLPlayer.pl24);
+		benched.add(NFLPlayer.pl25);
+		benched.add(NFLPlayer.pl26);
+		benched.add(NFLPlayer.pl27);
+		benched.add(NFLPlayer.pl28);
+		benched.add(NFLPlayer.pl29);
+		benched.add(NFLPlayer.pl30);
+		benched.add(NFLPlayer.pl31);
+		benched.add(NFLPlayer.pl32);
+		benched.add(NFLPlayer.pl33);
+		benched.add(NFLPlayer.pl34);
+		benched.add(NFLPlayer.pl35);
+		benched.add(NFLPlayer.pl36);
+		benched.add(NFLPlayer.pl37);
+		benched.add(NFLPlayer.pl38);
+		benched.add(NFLPlayer.pl39);
+		benched.add(NFLPlayer.pl40);
+		benched.add(NFLPlayer.pl41);
+		benched.add(NFLPlayer.pl42);
+		benched.add(NFLPlayer.pl43);
+		benched.add(NFLPlayer.pl44);
+		benched.add(NFLPlayer.pl45);
+		benched.add(NFLPlayer.pl46);
+		benched.add(NFLPlayer.pl47);
+		benched.add(NFLPlayer.pl48);
+		benched.add(NFLPlayer.pl49);
+		benched.add(NFLPlayer.pl50);
+		
+		Button currentTeam = new Button("Current Team");
+		currentTeam.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent actionEvent) {
+				currentTeam();
+			}
+		} );
+		Button modTeam = new Button("Add/Remove Players");
+		modTeam.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent actionEvent) {
+				modTeam();
+			}
+		} );
+		Button wholeTeam = new Button("All Available Players");
+		wholeTeam.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent actionEvent) {
+				wholeTeam();
+			}
+		} );
+		Button exit = new Button("Exit Program");
+		exit.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent actionEvent) {
+				primaryStage.close();
+			}
+		} );
+		Label logo = new Label("NFL");
+		logo.setTextFill(Color.RED);
+		logo.setLayoutX(515);
+		logo.setLayoutY(468);
+		logo.setScaleX(2);
+		logo.setScaleY(3);
+		
+		Circle ci = new Circle();
+		ci.setRadius(30);
+		ci.setCenterX(525);
+		ci.setCenterY(475);
+		ci.setFill(Color.BLACK);
+		pa.getChildren().add(ci);
+		pa.getChildren().add(logo);
+		
+		buttons.setPadding(new Insets(50, 0, 100, 225));
+		buttons.setSpacing(50);
+		buttons.getChildren().add(currentTeam);
+		buttons.getChildren().add(modTeam);
+		buttons.getChildren().add(wholeTeam);
+		buttons.getChildren().add(exit);
+		pane.setCenter(buttons);
+		pa.getChildren().add(pane);
+		Scene scene = new Scene(pa, 550, 500);
+		primaryStage.setScene(scene);
+		primaryStage.setResizable(false);
+		primaryStage.setTitle("NFL Draft");
+		primaryStage.show();
+	}
+
+}
