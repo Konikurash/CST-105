@@ -1,0 +1,304 @@
+//Tyler Rosenberry
+//I am the creator of this program.
+
+import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.scene.Scene;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
+
+public class CheckerBoard extends Application {
+
+	public static void main(String[] args) {
+		Application.launch(args);
+	}
+	
+	public void start(Stage primaryStage) {
+		VBox pa = new VBox();
+		
+		Rectangle a = new Rectangle(50, 50);
+		a.setVisible(false);
+		//Row1
+		HBox row1 = new HBox(50);
+		Rectangle a1 = new Rectangle(50, 50);
+		a1.setFill(Color.BLACK);
+		Rectangle a2 = new Rectangle(50, 50);
+		a2.setFill(Color.BLACK);
+		Rectangle a3 = new Rectangle(50, 50);
+		a3.setFill(Color.BLACK);
+		Rectangle a4 = new Rectangle(50, 50);
+		a4.setFill(Color.BLACK);
+		Rectangle a5 = new Rectangle(50, 50);
+		a5.setFill(Color.BLACK);
+		Rectangle a6 = new Rectangle(50, 50);
+		a6.setFill(Color.BLACK);
+		
+		row1.getChildren().add(a1);
+		row1.getChildren().add(a2);
+		row1.getChildren().add(a3);
+		row1.getChildren().add(a4);
+		row1.getChildren().add(a5);
+		row1.getChildren().add(a6);
+		//Row2
+		HBox row2 = new HBox(50);
+		row2.setPadding(new Insets(0, 0, 0, 50));
+		Rectangle b1 = new Rectangle(50, 50);
+		b1.setFill(Color.BLACK);
+		Rectangle b2 = new Rectangle(50, 50);
+		b2.setFill(Color.BLACK);
+		Rectangle b3 = new Rectangle(50, 50);
+		b3.setFill(Color.BLACK);
+		Rectangle b4 = new Rectangle(50, 50);
+		b4.setFill(Color.BLACK);
+		Rectangle b5 = new Rectangle(50, 50);
+		b5.setFill(Color.BLACK);
+		Rectangle b6 = new Rectangle(50, 50);
+		b6.setFill(Color.BLACK);
+		
+		row2.getChildren().add(b1);
+		row2.getChildren().add(b2);
+		row2.getChildren().add(b3);
+		row2.getChildren().add(b4);
+		row2.getChildren().add(b5);
+		row2.getChildren().add(b6);
+		//Row3
+		HBox row3 = new HBox(50);
+		Rectangle c1 = new Rectangle(50, 50);
+		c1.setFill(Color.BLACK);
+		Rectangle c2 = new Rectangle(50, 50);
+		c2.setFill(Color.BLACK);
+		Rectangle c3 = new Rectangle(50, 50);
+		c3.setFill(Color.BLACK);
+		Rectangle c4 = new Rectangle(50, 50);
+		c4.setFill(Color.BLACK);
+		Rectangle c5 = new Rectangle(50, 50);
+		c5.setFill(Color.BLACK);
+		Rectangle c6 = new Rectangle(50, 50);
+		c6.setFill(Color.BLACK);
+				
+		row3.getChildren().add(c1);
+		row3.getChildren().add(c2);
+		row3.getChildren().add(c3);
+		row3.getChildren().add(c4);
+		row3.getChildren().add(c5);
+		row3.getChildren().add(c6);
+		//Row4
+		HBox row4 = new HBox(50);
+		row4.setPadding(new Insets(0, 0, 0, 50));
+		Rectangle d1 = new Rectangle(50, 50);
+		d1.setFill(Color.BLACK);
+		Rectangle d2 = new Rectangle(50, 50);
+		d2.setFill(Color.BLACK);
+		Rectangle d3 = new Rectangle(50, 50);
+		d3.setFill(Color.BLACK);
+		Rectangle d4 = new Rectangle(50, 50);
+		d4.setFill(Color.BLACK);
+		Rectangle d5 = new Rectangle(50, 50);
+		d5.setFill(Color.BLACK);
+		Rectangle d6 = new Rectangle(50, 50);
+		d6.setFill(Color.BLACK);
+				
+		row4.getChildren().add(d1);
+		row4.getChildren().add(d2);
+		row4.getChildren().add(d3);
+		row4.getChildren().add(d4);
+		row4.getChildren().add(d5);
+		row4.getChildren().add(d6);
+		//Row5
+				HBox row5 = new HBox(50);
+				Rectangle e1 = new Rectangle(50, 50);
+				e1.setFill(Color.BLACK);
+				Rectangle e2 = new Rectangle(50, 50);
+				e2.setFill(Color.BLACK);
+				Rectangle e3 = new Rectangle(50, 50);
+				e3.setFill(Color.BLACK);
+				Rectangle e4 = new Rectangle(50, 50);
+				e4.setFill(Color.BLACK);
+				Rectangle e5 = new Rectangle(50, 50);
+				e5.setFill(Color.BLACK);
+				Rectangle e6 = new Rectangle(50, 50);
+				e6.setFill(Color.BLACK);
+				
+				row5.getChildren().add(e1);
+				row5.getChildren().add(e2);
+				row5.getChildren().add(e3);
+				row5.getChildren().add(e4);
+				row5.getChildren().add(e5);
+				row5.getChildren().add(e6);
+				//Row6
+				HBox row6 = new HBox(50);
+				row6.setPadding(new Insets(0, 0, 0, 50));
+				Rectangle f1 = new Rectangle(50, 50);
+				f1.setFill(Color.BLACK);
+				Rectangle f2 = new Rectangle(50, 50);
+				f2.setFill(Color.BLACK);
+				Rectangle f3 = new Rectangle(50, 50);
+				f3.setFill(Color.BLACK);
+				Rectangle f4 = new Rectangle(50, 50);
+				f4.setFill(Color.BLACK);
+				Rectangle f5 = new Rectangle(50, 50);
+				f5.setFill(Color.BLACK);
+				Rectangle f6 = new Rectangle(50, 50);
+				f6.setFill(Color.BLACK);
+				
+				row6.getChildren().add(f1);
+				row6.getChildren().add(f2);
+				row6.getChildren().add(f3);
+				row6.getChildren().add(f4);
+				row6.getChildren().add(f5);
+				row6.getChildren().add(f6);
+				//Row7
+				HBox row7 = new HBox(50);
+				Rectangle g1 = new Rectangle(50, 50);
+				g1.setFill(Color.BLACK);
+				Rectangle g2 = new Rectangle(50, 50);
+				g2.setFill(Color.BLACK);
+				Rectangle g3 = new Rectangle(50, 50);
+				g3.setFill(Color.BLACK);
+				Rectangle g4 = new Rectangle(50, 50);
+				g4.setFill(Color.BLACK);
+				Rectangle g5 = new Rectangle(50, 50);
+				g5.setFill(Color.BLACK);
+				Rectangle g6 = new Rectangle(50, 50);
+				g6.setFill(Color.BLACK);
+						
+				row7.getChildren().add(g1);
+				row7.getChildren().add(g2);
+				row7.getChildren().add(g3);
+				row7.getChildren().add(g4);
+				row7.getChildren().add(g5);
+				row7.getChildren().add(g6);
+				//Row8
+				HBox row8 = new HBox(50);
+				row8.setPadding(new Insets(0, 0, 0, 50));
+				Rectangle h1 = new Rectangle(50, 50);
+				h1.setFill(Color.BLACK);
+				Rectangle h2 = new Rectangle(50, 50);
+				h2.setFill(Color.BLACK);
+				Rectangle h3 = new Rectangle(50, 50);
+				h3.setFill(Color.BLACK);
+				Rectangle h4 = new Rectangle(50, 50);
+				h4.setFill(Color.BLACK);
+				Rectangle h5 = new Rectangle(50, 50);
+				h5.setFill(Color.BLACK);
+				Rectangle h6 = new Rectangle(50, 50);
+				h6.setFill(Color.BLACK);
+						
+				row8.getChildren().add(h1);
+				row8.getChildren().add(h2);
+				row8.getChildren().add(h3);
+				row8.getChildren().add(h4);
+				row8.getChildren().add(h5);
+				row8.getChildren().add(h6);
+				//Row9
+				HBox row9 = new HBox(50);
+				Rectangle i1 = new Rectangle(50, 50);
+				i1.setFill(Color.BLACK);
+				Rectangle i2 = new Rectangle(50, 50);
+				i2.setFill(Color.BLACK);
+				Rectangle i3 = new Rectangle(50, 50);
+				i3.setFill(Color.BLACK);
+				Rectangle i4 = new Rectangle(50, 50);
+				i4.setFill(Color.BLACK);
+				Rectangle i5 = new Rectangle(50, 50);
+				i5.setFill(Color.BLACK);
+				Rectangle i6 = new Rectangle(50, 50);
+				i6.setFill(Color.BLACK);
+				
+				row9.getChildren().add(i1);
+				row9.getChildren().add(i2);
+				row9.getChildren().add(i3);
+				row9.getChildren().add(i4);
+				row9.getChildren().add(i5);
+				row9.getChildren().add(i6);
+				//Row10
+				HBox row10 = new HBox(50);
+				row10.setPadding(new Insets(0, 0, 0, 50));
+				Rectangle j1 = new Rectangle(50, 50);
+				j1.setFill(Color.BLACK);
+				Rectangle j2 = new Rectangle(50, 50);
+				j2.setFill(Color.BLACK);
+				Rectangle j3 = new Rectangle(50, 50);
+				j3.setFill(Color.BLACK);
+				Rectangle j4 = new Rectangle(50, 50);
+				j4.setFill(Color.BLACK);
+				Rectangle j5 = new Rectangle(50, 50);
+				j5.setFill(Color.BLACK);
+				Rectangle j6 = new Rectangle(50, 50);
+				j6.setFill(Color.BLACK);
+				
+				row10.getChildren().add(j1);
+				row10.getChildren().add(j2);
+				row10.getChildren().add(j3);
+				row10.getChildren().add(j4);
+				row10.getChildren().add(j5);
+				row10.getChildren().add(j6);
+				//Row11
+				HBox row11 = new HBox(50);
+				Rectangle k1 = new Rectangle(50, 50);
+				k1.setFill(Color.BLACK);
+				Rectangle k2 = new Rectangle(50, 50);
+				k2.setFill(Color.BLACK);
+				Rectangle k3 = new Rectangle(50, 50);
+				k3.setFill(Color.BLACK);
+				Rectangle k4 = new Rectangle(50, 50);
+				k4.setFill(Color.BLACK);
+				Rectangle k5 = new Rectangle(50, 50);
+				k5.setFill(Color.BLACK);
+				Rectangle k6 = new Rectangle(50, 50);
+				k6.setFill(Color.BLACK);
+						
+				row11.getChildren().add(k1);
+				row11.getChildren().add(k2);
+				row11.getChildren().add(k3);
+				row11.getChildren().add(k4);
+				row11.getChildren().add(k5);
+				row11.getChildren().add(k6);
+				//Row12
+				HBox row12 = new HBox(50);
+				row12.setPadding(new Insets(0, 0, 0, 50));
+				Rectangle l1 = new Rectangle(50, 50);
+				l1.setFill(Color.BLACK);
+				Rectangle l2 = new Rectangle(50, 50);
+				l2.setFill(Color.BLACK);
+				Rectangle l3 = new Rectangle(50, 50);
+				l3.setFill(Color.BLACK);
+				Rectangle l4 = new Rectangle(50, 50);
+				l4.setFill(Color.BLACK);
+				Rectangle l5 = new Rectangle(50, 50);
+				l5.setFill(Color.BLACK);
+				Rectangle l6 = new Rectangle(50, 50);
+				l6.setFill(Color.BLACK);
+						
+				row12.getChildren().add(l1);
+				row12.getChildren().add(l2);
+				row12.getChildren().add(l3);
+				row12.getChildren().add(l4);
+				row12.getChildren().add(l5);
+				row12.getChildren().add(l6);
+		
+		
+		pa.getChildren().add(row1);
+		pa.getChildren().add(row2);
+		pa.getChildren().add(row3);
+		pa.getChildren().add(row4);
+		pa.getChildren().add(row5);
+		pa.getChildren().add(row6);
+		pa.getChildren().add(row7);
+		pa.getChildren().add(row8);
+		pa.getChildren().add(row9);
+		pa.getChildren().add(row10);
+		pa.getChildren().add(row11);
+		pa.getChildren().add(row12);
+		Scene scene = new Scene(pa, 590, 590);
+		primaryStage.setScene(scene);
+		primaryStage.setResizable(false);
+		primaryStage.setTitle("Verti-Labels");
+		primaryStage.show();
+	}
+}
