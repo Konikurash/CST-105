@@ -63,7 +63,7 @@ public class Labels extends Application {
 		Scene scene = new Scene(pa, 550, 500);
 		primaryStage.setScene(scene);
 		primaryStage.setResizable(false);
-		primaryStage.setTitle("CheckerBoard");
+		primaryStage.setTitle("Verti-Labels");
 		primaryStage.show();
 	}
 
